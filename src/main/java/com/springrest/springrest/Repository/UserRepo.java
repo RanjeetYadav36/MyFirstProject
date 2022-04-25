@@ -1,6 +1,6 @@
-package com.springrest.springrest.Dao;
+package com.springrest.springrest.Repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import com.springrest.springrest.entities.User;
-public interface UserDao extends JpaRepository<User, Long>{
+public interface UserRepo extends JpaRepository<User, Long>{
 
 }

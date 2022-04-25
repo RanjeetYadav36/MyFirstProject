@@ -6,13 +6,13 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.springrest.springrest.Dao.UserDao;
+import com.springrest.springrest.Repository.UserRepo;
 import com.springrest.springrest.entities.User;
 
 @Service
 public class UserServiceImp implements UserService {
 @Autowired
-private UserDao userdao;
+private UserRepo userdao;
 	//List<User> list;
 	
 	public UserServiceImp() {
@@ -37,6 +37,10 @@ private UserDao userdao;
 	}
 	public User UpdateUser(User user) {
 		userdao.save(user);
+		return user;
+	}
+	public User getSingleUser(Long id) {
+		User user = userdao.findById(id).get();
 		return user;
 	}
 
